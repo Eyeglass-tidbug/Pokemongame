@@ -1,0 +1,11 @@
+D:\Jancode\Pokemon\Pokemon Game\Pokemon Game\bin\Debug\Pokemon Game.exe.config
+D:\Jancode\Pokemon\Pokemon Game\Pokemon Game\bin\Debug\Pokemon Game.exe
+D:\Jancode\Pokemon\Pokemon Game\Pokemon Game\bin\Debug\Pokemon Game.pdb
+D:\Jancode\Pokemon\Pokemon Game\Pokemon Game\obj\Debug\Pokemon Game.csproj.AssemblyReference.cache
+D:\Jancode\Pokemon\Pokemon Game\Pokemon Game\obj\Debug\Pokemon Game.csproj.SuggestedBindingRedirects.cache
+D:\Jancode\Pokemon\Pokemon Game\Pokemon Game\obj\Debug\Pokemon_Game.Form1.resources
+D:\Jancode\Pokemon\Pokemon Game\Pokemon Game\obj\Debug\Pokemon_Game.Properties.Resources.resources
+D:\Jancode\Pokemon\Pokemon Game\Pokemon Game\obj\Debug\Pokemon Game.csproj.GenerateResource.cache
+D:\Jancode\Pokemon\Pokemon Game\Pokemon Game\obj\Debug\Pokemon Game.csproj.CoreCompileInputs.cache
+D:\Jancode\Pokemon\Pokemon Game\Pokemon Game\obj\Debug\Pokemon Game.exe
+D:\Jancode\Pokemon\Pokemon Game\Pokemon Game\obj\Debug\Pokemon Game.pdb
