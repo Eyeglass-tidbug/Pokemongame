@@ -30,12 +30,15 @@ namespace Pokemon_Game
             this.Enemyname.Text = this.Enemy.getName();
             this.EnemyHP.Text = this.Enemy.getHP().ToString();
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
-
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // Backpack
+            this.backpack.Visible = true;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             selectedPokemon = pokemons[0];
@@ -52,28 +55,6 @@ namespace Pokemon_Game
             else
             { this.backpack.Visible = false; }
         }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            // Backpack
-            this.backpack.Visible = true;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Enemyname_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void gyrados_Click(object sender, EventArgs e)
         {
             selectedPokemon = pokemons[1];
@@ -85,38 +66,10 @@ namespace Pokemon_Game
                 this.pictureBox1.Image = null;
                 this.Ourname.Text = "*Eliminated*";
                 this.OurHP.Text = "0";
-                this.selectedPokemon.getAttack();
             }
             else
             { this.backpack.Visible = false; }
         }
-
-        private void Attack_Click(object sender, EventArgs e)
-        {
-            // Attack
-            int dmg = this.selectedPokemon.getAttack() - this.Enemy.getDefense();
-            this.test.Text = dmg.ToString();
-
-        }
-
-        private void Def_Click(object sender, EventArgs e)
-        {
-            // defend
-            int getDefense = this.selectedPokemon.getDefense() + 50;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            // Heal
-            int getHeal = this.selectedPokemon.getHP() + 50;
-            this.OurHP.Text = getHeal.ToString();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Lucario_Click(object sender, EventArgs e)
         {
             selectedPokemon = pokemons[3];
@@ -133,7 +86,6 @@ namespace Pokemon_Game
             else
             { this.backpack.Visible = false; }
         }
-
         private void tysomething_Click(object sender, EventArgs e)
         {
             selectedPokemon = pokemons[2];
@@ -149,6 +101,85 @@ namespace Pokemon_Game
             }
             else
             { this.backpack.Visible = false; }
+        }
+
+        //attack
+        private void Attack_Click(object sender, EventArgs e)
+        {
+            if (this.pictureBox1.Image == null) { }
+            else if (this.Enemy.getHP() == 0)
+            {
+                this.EnemyHP.Text = "*Enemy Eliminated*";
+            }
+            else
+            {
+                if (Enemy.getHP() <= 0)
+                {
+                    //this.test.Visible = true;
+                }
+                else
+                {
+                    // Attack
+                    this.Enemy.takeDamage(selectedPokemon.getAttack(), Enemy.getDefense());
+                    this.EnemyHP.Text = this.Enemy.getHP().ToString();
+                    if (this.Enemy.getHP() <= 0)
+                    {
+                        this.pictureBox2.Image = null;
+                        this.EnemyHP.Text = "*Enemy Eliminated*";
+                        this.You_win.Visible = true;
+                    }
+                    //get Attack
+                    this.selectedPokemon.takeDamage(Enemy.getAttack(), selectedPokemon.getDefense());
+                    this.OurHP.Text = this.selectedPokemon.getHP().ToString();
+                    if (this.selectedPokemon.getHP() <= 0)
+                    {
+                        this.pictureBox1.Image = null;
+                        this.Ourname.Text = "*Eliminated*";
+                        this.OurHP.Text = "0";
+                    }
+                }
+                //test why does it not random ??? wtf
+                //if (0 > -1) { this.test.Text = "Yes"; } else { this.test.Text = "No"; ; }
+            }
+        }
+        private void Def_Click(object sender, EventArgs e)
+        {
+            if (this.pictureBox1.Image == null) { }
+            else
+            {
+                // defend add shild
+                //get attack
+                //loss shild
+                this.selectedPokemon.shild(this.Enemy.getAttack(), this.selectedPokemon.getDefense());
+                this.OurHP.Text = this.selectedPokemon.getHP().ToString();
+            }
+        }
+        int item = 3;
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (this.pictureBox1.Image == null) { }
+            else
+            {
+                // Heal
+                if (item <=0) { }
+                else
+                {
+                    if (this.selectedPokemon.getHP() <= 0) { }
+                    else
+                    {
+                        this.selectedPokemon.Heal();
+                        this.OurHP.Text = this.selectedPokemon.getHP().ToString();
+
+                        item --;
+                        //this.You_win.Text = item.ToString();
+                    }
+                }
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

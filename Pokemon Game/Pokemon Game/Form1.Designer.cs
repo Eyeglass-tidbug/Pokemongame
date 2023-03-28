@@ -1,4 +1,6 @@
-﻿namespace Pokemon_Game
+﻿using System;
+
+namespace Pokemon_Game
 {
     partial class Form1
     {
@@ -45,11 +47,11 @@
             this.Enemyname = new System.Windows.Forms.TextBox();
             this.gyrados = new System.Windows.Forms.Button();
             this.backpack = new System.Windows.Forms.GroupBox();
-            this.test = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Lucario = new System.Windows.Forms.Button();
             this.tysomething = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.You_win = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.backpack.SuspendLayout();
@@ -178,7 +180,6 @@
             this.Ourname.Name = "Ourname";
             this.Ourname.Size = new System.Drawing.Size(184, 45);
             this.Ourname.TabIndex = 14;
-            this.Ourname.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // OurHP
             // 
@@ -231,14 +232,25 @@
             this.backpack.Text = "Backpack";
             this.backpack.Visible = false;
             // 
-            // test
+            // Lucario
             // 
-            this.test.Font = new System.Drawing.Font("Agency FB", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.test.Location = new System.Drawing.Point(246, 208);
-            this.test.Multiline = true;
-            this.test.Name = "test";
-            this.test.Size = new System.Drawing.Size(184, 45);
-            this.test.TabIndex = 18;
+            this.Lucario.Location = new System.Drawing.Point(11, 125);
+            this.Lucario.Name = "Lucario";
+            this.Lucario.Size = new System.Drawing.Size(211, 46);
+            this.Lucario.TabIndex = 12;
+            this.Lucario.Text = "Lucario";
+            this.Lucario.UseVisualStyleBackColor = true;
+            this.Lucario.Click += new System.EventHandler(this.Lucario_Click);
+            // 
+            // tysomething
+            // 
+            this.tysomething.Location = new System.Drawing.Point(11, 177);
+            this.tysomething.Name = "tysomething";
+            this.tysomething.Size = new System.Drawing.Size(211, 46);
+            this.tysomething.TabIndex = 13;
+            this.tysomething.Text = "Tyranitar";
+            this.tysomething.UseVisualStyleBackColor = true;
+            this.tysomething.Click += new System.EventHandler(this.tysomething_Click);
             // 
             // pictureBox2
             // 
@@ -261,32 +273,29 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // Lucario
+            // You_win
             // 
-            this.Lucario.Location = new System.Drawing.Point(11, 125);
-            this.Lucario.Name = "Lucario";
-            this.Lucario.Size = new System.Drawing.Size(211, 46);
-            this.Lucario.TabIndex = 12;
-            this.Lucario.Text = "Lucario";
-            this.Lucario.UseVisualStyleBackColor = true;
-            this.Lucario.Click += new System.EventHandler(this.Lucario_Click);
-            // 
-            // tysomething
-            // 
-            this.tysomething.Location = new System.Drawing.Point(11, 177);
-            this.tysomething.Name = "tysomething";
-            this.tysomething.Size = new System.Drawing.Size(211, 46);
-            this.tysomething.TabIndex = 13;
-            this.tysomething.Text = "Tyranitar";
-            this.tysomething.UseVisualStyleBackColor = true;
-            this.tysomething.Click += new System.EventHandler(this.tysomething_Click);
+            this.You_win.BackColor = System.Drawing.Color.Snow;
+            this.You_win.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.You_win.Dock = System.Windows.Forms.DockStyle.Top;
+            this.You_win.Enabled = false;
+            this.You_win.Font = new System.Drawing.Font("Agency FB", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.You_win.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.You_win.Location = new System.Drawing.Point(0, 0);
+            this.You_win.Multiline = true;
+            this.You_win.Name = "You_win";
+            this.You_win.Size = new System.Drawing.Size(928, 64);
+            this.You_win.TabIndex = 19;
+            this.You_win.Text = "You win";
+            this.You_win.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.You_win.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 539);
-            this.Controls.Add(this.test);
+            this.Controls.Add(this.You_win);
             this.Controls.Add(this.backpack);
             this.Controls.Add(this.EnemyHP);
             this.Controls.Add(this.Enemyname);
@@ -329,9 +338,9 @@
         private System.Windows.Forms.Button gyrados;
         private System.Windows.Forms.Button Attack;
         private System.Windows.Forms.GroupBox backpack;
-        private System.Windows.Forms.TextBox test;
         private System.Windows.Forms.Button Lucario;
         private System.Windows.Forms.Button tysomething;
+        private System.Windows.Forms.TextBox You_win;
     }
 }
 
